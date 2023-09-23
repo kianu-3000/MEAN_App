@@ -1,0 +1,76 @@
+Basic Shop Application
+
+What the app should do:
+    There are two users costumer and a business owner
+    So basically its like a social media for small business owners
+    (generally targeting small business owners that sell clothes, food,
+    and other products that only one or two person is working on it).
+
+Core functions of the application:
+    Product catalog:
+        - displays product detail and image
+        - display product reviews
+    Shopping Cart:
+        - enables users to to add products to their carts
+    Check out process:
+        - just a basic flow of billing
+    Payment method:
+        - Cash on delivery
+        - implement payment gateways like stripe or paypal
+    User Profile:
+        - allows users to manage their profiles, products, shipping, address, and ratings
+
+User Models:
+
+    Business Owner Model:
+        - id 
+        - first_name
+        - last_name
+        - middle_name
+        - birth_date
+        - age
+        - business_name
+        - business_type
+        - payment_method
+        - user_type
+        -rating
+
+    Product Model: (this will only be linked to a Business Owner user)
+        - id
+        - owner_id
+        - name
+        - product_type
+        - stock
+        - price
+        - detail
+        - rating
+        - user_type
+    
+    Follower model: (only customer user will be able to follow a business owner)
+        - id_owner
+        - id_customer
+
+    Costumer Model:
+        - id 
+        - first_name
+        - last_name
+        - middle_name
+        - birth_date
+        - age
+
+Web app routes:
+    - Login Page
+    - Home Page:
+        there are two views customer views and business views
+            - Customer view:
+                - shows customer posts
+            - Business view:
+                - shows business posts
+        - clicking user name in post will route to their profile page and can only read details
+    - User profile Page
+        Owner:
+            - basic basic user information like addresses and shit
+            - displays all the products, product details, stocks, and ratings
+        Customer:
+            - basic basic user information like addresses and shit
+            - displays buy histories and currently ongoing product deliveries
