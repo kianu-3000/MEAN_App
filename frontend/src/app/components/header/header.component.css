@@ -1,0 +1,78 @@
+.navbar{
+	position: fixed;
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	padding: 0.5rem 3rem;
+	background-color: var(--main);
+	box-shadow: 0px 4px 10px 0px var(--shadow);
+}
+
+/* Title / Brand Name */
+.navbar__brand_name{
+	flex-grow: 0.2;
+	font-size: var(--fs-large);
+	font-weight: bolder;
+	color: var(--text);
+}
+.navbar__brand_name i{
+	color: var(--background);
+}
+
+/* navigation */
+.navbar__navigation{
+	flex-grow: 1;
+}
+.navbar__navigation *{
+	margin-left: var(--fs-regular);
+}
+.navbar__navigation i{
+	margin-left: var(--fs-large);
+}
+.navbar__navigation form{
+	width: 100%;
+	margin-left: var(--fs-large);
+}
+.navbar__navigation form input{
+	background-color: var(--accent);
+	text-align: center;
+
+	width: 50%;
+	border-radius: var(--fs-large);
+	padding: calc(var(--fs-small) - .2rem) var(--fs-small);
+	border: none;
+	outline: none;
+}
+
+
+/* logout */
+.navbar__logout{
+	flex-grow: 1;
+	padding: 0.2rem var(--fs-regular);
+	border-radius: var(--fs-medium);
+	justify-content: right;
+	align-items: center;
+}
+.navbar__logout span{
+	color: var(--danger);
+	font-weight: bold;
+	font-size: var(--fs-regular);
+}
+.navbar__logout i{
+	font-size: var(--fs-regular);
+	color: var(--danger);
+}
+.logout__btn{
+	padding: var(--fs-small);
+	border-radius: var(--fs-medium);
+	background-color: var(--background);
+}
+/* Mobile view responsive design */
+
+@media screen and (max-width: 400px){
+	.navbar__navigation, .navbar__logout{
+		display: none;
+	}
+}
