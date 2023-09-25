@@ -74,3 +74,7 @@ Web app routes:
         Customer:
             - basic basic user information like addresses and shit
             - displays buy histories and currently ongoing product deliveries
+
+
+
+old mdb conn: mongodb+srv://kianuyepes3000:Lalatina%403000@mernapp.adobby8.mongodb.net/?retryWrites=true&w=majority

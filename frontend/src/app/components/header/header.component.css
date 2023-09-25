@@ -30,10 +30,18 @@
 .navbar__navigation{
 	flex-grow: 1;
 }
-.navbar__navigation *{
-	margin-left: var(--fs-regular);
+.navbar__navigation a{
+	margin-left: var(--fs-small);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.2s ease;
 }
-.navbar__navigation i{
+.navbar__navigation a:hover{
+	transform: scale(1.2);
+}
+
+.navbar__navigation a{
 	margin-left: var(--fs-large);
 }
 .navbar__navigation form{
@@ -74,7 +82,6 @@
 	border-radius: var(--fs-medium);
 	background-color: var(--background);
 }
-
 
 /* ============> Mobile view responsive design */
 

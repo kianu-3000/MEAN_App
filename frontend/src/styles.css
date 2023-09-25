@@ -30,7 +30,6 @@ i{
 .icons{
 	font-size: var(--fs-large);
 }
-
 .flex-row{
 	display: flex;
 	flex-direction: row;
