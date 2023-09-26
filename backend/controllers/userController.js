@@ -68,13 +68,15 @@ const updateUser = async (req, res) =>{
 
     try{
         if(!mongoose.Types.ObjectId.isValid(id)){
-            
+            return res.status(404).json({error: "Id is invalid"});
         }
+
         const user = await User.findByIdAndUpdate({_id: id}, {...req.body});
         if(!user){
             return res.status(404).json({error: "No such user!"});
         }
         return res.status(200).json(user);
+
     }catch(error){
         return res.status(400).json({error: error});
     }
