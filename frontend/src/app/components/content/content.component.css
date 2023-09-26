@@ -120,7 +120,7 @@
     .content__close i{
         position: absolute;
         top: 7%;
-        left: 92%;
+        left: 94%;
         transform: translateY(-50%);
         font-size: var(--fs-regular);
         color: var(--text);
