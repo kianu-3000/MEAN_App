@@ -42,7 +42,8 @@
     line-height: var(--fs-regular);
 }
 .content__profile i:nth-child(2){
-    color: var(--main);
+    color: hsl(0, 0%, 60%);
+    font-style: italic;
 }
 
 .content__profile i:nth-child(3){
@@ -60,6 +61,7 @@
 .content__close i:hover{
     color: var(--danger);
 }
+
 .content__footer{
     display: flex;
     flex-direction: row;
@@ -77,7 +79,15 @@
     border: none;
     padding: 0.2rem var(--fs-regular);
     background-color: var(--main);
+    transition: transform 0.2s ease;
 }
+.footer__visit_shop button:hover{
+    transform: scale(1.2);
+}
+.footer__visit_shop button:active{
+    transform: scale(1);
+}
+
 .footer__visit_shop button span{
     font-weight: bold;
     color: var(--text);

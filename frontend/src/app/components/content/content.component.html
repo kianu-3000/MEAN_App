@@ -5,9 +5,9 @@
         <div class="content__image"></div>
 
         <section class="content__profile">
-            <a routerLink="/profile" class="profile__name">User</a>
-            <i class="profile__address">New York City</i>
-            <i class="profile__type">@Food</i>
+            <a routerLink="/profile" class="profile__name">{{ entry.name }}</a>
+            <i class="profile__address">{{ entry.address }}</i>
+            <i class="profile__type">{{ entry.type }}</i>
         </section>
 
         <div class="content__close">
@@ -16,7 +16,7 @@
     </div>
 
     <div class="content__body">
-        <section class="body__left">Some Text</section>
+        <section class="body__left">{{ entry.content }}</section>
         <section class="body__right">example img</section>
     </div>
 
@@ -24,7 +24,7 @@
         <div class="footer__rating"></div>
 
         <div class="footer__visit_shop">
-            <button class="cursor_pointer">
+            <button class="cursor_pointer" on-click = "showData($event)">
                 <span>Visit Shop</span>
                 <i class="bi bi-arrow-right visit_btn"></i>
             </button>

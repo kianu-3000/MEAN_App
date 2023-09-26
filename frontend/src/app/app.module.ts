@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ContentComponent } from './components/content/content.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { ContentComponent } from './components/content/content.component';
     BodyComponent,
     ProfileComponent,
     ContentComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
