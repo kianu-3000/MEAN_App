@@ -33,7 +33,7 @@ User Models:
         - business_type
         - payment_method
         - user_type
-        -rating
+        - rating
 
     Product Model: (this will only be linked to a Business Owner user)
         - id

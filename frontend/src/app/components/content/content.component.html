@@ -5,9 +5,9 @@
         <div class="content__image"></div>
 
         <section class="content__profile">
-            <a routerLink="/profile" class="profile__name">{{ entry.name }}</a>
+            <a routerLink="/profile" class="profile__name">{{ entry.username }}</a>
             <i class="profile__address">{{ entry.address }}</i>
-            <i class="profile__type">{{ entry.type }}</i>
+            <i class="profile__type">@{{ entry.type }}</i>
         </section>
 
         <div class="content__close">
@@ -16,8 +16,8 @@
     </div>
 
     <!-- ngIf will display content when it is true -->
-    <div class="content__body" *ngIf="entry.display">
-        <section class="body__left">{{ entry.content }}</section>
+    <div class="content__body">
+        <section class="body__left">{{ entry.description }}</section>
         <section class="body__right">example img</section>
     </div>
 

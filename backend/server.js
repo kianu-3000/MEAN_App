@@ -17,19 +17,19 @@ const userRoutes = require('./routes/user');
 app.use('/api/users', userRoutes);
 
 
-// // Connect to Database
-// mongoose.connect(process.env.DB_CONNECTION) // returns a promise
-//     .then(()=>{
-//         console.log("Connected to MongoDB!");
-//         // Listens for request
-//         app.listen(process.env.PORT, ()=>{
-//             console.log(`Listening to PORT: ${process.env.PORT}`);
-//         });
-//     })
-//     .catch((error)=>{
-//         console.log(error);
-//     })
+// Connect to Database
+mongoose.connect(process.env.DB_CONNECTION) // returns a promise
+    .then(()=>{
+        console.log("Connected to MongoDB!");
+        // Listens for request
+        app.listen(process.env.PORT, ()=>{
+            console.log(`Listening to PORT: ${process.env.PORT}`);
+        });
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
 
-app.listen(process.env.PORT, ()=>{
-    console.log(`Listening to PORT: ${process.env.PORT}`);
-});
+// app.listen(process.env.PORT, ()=>{
+//     console.log(`Listening to PORT: ${process.env.PORT}`);
+// });
