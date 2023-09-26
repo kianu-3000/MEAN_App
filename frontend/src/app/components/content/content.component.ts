@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataEntry } from './entry';
+import { DataService } from '../../service/data.service';
 
 @Component({
   selector: 'app-content',
@@ -8,21 +9,47 @@ import { DataEntry } from './entry';
 })
 export class ContentComponent implements OnInit{
 
-  name : string = 'Kianu';
+  data : any = null;
   myClass = "yeah boi";
-  entry: DataEntry;
+  entry: DataEntry[] = [];
 
-  constructor(){}
+  constructor(private dataService: DataService){}
 
   ngOnInit(): void{
-    this.entry = {
-      id: 1,
-      name: "Kid Laroi",
-      address: "Cebu",
-      content: "Something",
-      type: "@Food"
+    // this.entry[0] = {
+    //   id: 1,
+    //   name: "Kid Laroi",
+    //   address: "York New, City",
+    //   content: "Shees",
+    //   type: "@Tech",
+    //   display: true
+    // }
 
-    }
+    // this.entry[1] = {
+    //   id: 2,
+    //   name: "Kianu",
+    //   address: "Lahug, Cebu",
+    //   content: "Hello World",
+    //   type: "@Food",
+    //   display: true
+    // }
+    
+    // this.entry[2] = {
+    //   id: 2,
+    //   name: "Lalatina",
+    //   address: "Tokyo, Japan",
+    //   content: "ahhhhhh!! Yamete!",
+    //   type: "@Clothing",
+    //   display: true
+    // }
+    this.dataService.fetchData().subscribe((data) => {
+      this.data = data;
+      console.log(this.data);
+    }, (error) =>{
+      console.log("Error fetching data", error);
+    });
+   
+
   }
 
   showData($event: any){

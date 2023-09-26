@@ -8,6 +8,7 @@ import { BodyComponent } from './components/body/body.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ContentComponent } from './components/content/content.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

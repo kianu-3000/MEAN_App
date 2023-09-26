@@ -4,4 +4,5 @@ export interface DataEntry{
     address: string;
     content: string;
     type: string;
+    display: boolean;
 }

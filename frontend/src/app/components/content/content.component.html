@@ -1,5 +1,5 @@
 
-<div class="content">
+<div class="content" *ngFor="let entry of data">
 
     <div class="content__header">
         <div class="content__image"></div>
@@ -15,7 +15,8 @@
         </div>
     </div>
 
-    <div class="content__body">
+    <!-- ngIf will display content when it is true -->
+    <div class="content__body" *ngIf="entry.display">
         <section class="body__left">{{ entry.content }}</section>
         <section class="body__right">example img</section>
     </div>
