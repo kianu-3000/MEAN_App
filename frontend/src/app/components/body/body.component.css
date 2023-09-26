@@ -18,7 +18,7 @@
     padding: var(--fs-medium);
     background-color: var(--main);
     border-radius: var(--fs-medium);
-    box-shadow: 0px 0px 5px 3px var(--shadow);
+    box-shadow: 0px 0px 5px 0px var(--shadow);
 }
 .categories span{
     font-weight: bold;
