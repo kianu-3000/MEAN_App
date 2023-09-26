@@ -7,6 +7,8 @@
 
 /* Categories section */
 .body__categories{
+    position: fixed;
+    left: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,6 +18,7 @@
     padding: var(--fs-medium);
     background-color: var(--main);
     border-radius: var(--fs-medium);
+    box-shadow: 0px 0px 5px 3px var(--shadow);
 }
 .categories span{
     font-weight: bold;
@@ -32,6 +35,8 @@
 /* Content / News feed section  */
 .body__content{
     padding-top: var(--fs-large);
+    padding-right: var(--fs-x-large);
+    padding-left: var(--fs-x-large);
     display: flex;
     flex-direction: column;
 }
@@ -48,5 +53,13 @@
 
     .body__categories{
         display: none;
+    }
+
+    .body__content{
+        padding-top: var(--fs-large);
+        padding-right: calc(var(--fs-small) - .9rem);
+        padding-left: calc(var(--fs-small) - .9rem);
+        display: flex;
+        flex-direction: column;
     }
 }

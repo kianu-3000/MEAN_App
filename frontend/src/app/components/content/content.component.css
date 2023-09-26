@@ -6,6 +6,7 @@
 
     box-shadow: 0px 0px 5px 0px var(--shadow);
     padding: var(--fs-regular);
+    padding-bottom: 0;
     margin: 0 var(--fs-medium);
     margin-bottom: var(--fs-small);
     border-radius: var(--fs-regular);
@@ -48,13 +49,43 @@
 }
 .content__close i{
     position: absolute;
-    top: 10%;
-    left: 96%;
+    top: 9%;
+    left: 96.3%;
     transform: translateY(-50%);
     font-size: var(--fs-medium);
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+.content__close i:hover{
     color: var(--danger);
 }
+.content__footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--fs-small);
+    border-top: 1px solid var(--main);
+}
 
+.footer__visit_shop button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-radius: var(--fs-small);
+    border: none;
+    padding: 0.2rem var(--fs-regular);
+    background-color: var(--main);
+}
+.footer__visit_shop button span{
+    font-weight: bold;
+    color: var(--text);
+    margin-right: var(--fs-small);
+}
+.footer__visit_shop button .visit_btn{
+    font-size: calc(var(--fs-small) + 0.5rem);
+    color: var(--text);
+}
 /* content body */
 .content__body{
     display: flex;
@@ -84,12 +115,24 @@
         font-size: var(--fs-small);
         line-height: var(--fs-small);
     }
+    /* close btn */
     .content__close i{
         position: absolute;
-        top: 10%;
-        left: 93%;
+        top: 7%;
+        left: 92%;
         transform: translateY(-50%);
         font-size: var(--fs-regular);
-        color: var(--danger);
+        color: var(--text);
+    }
+    /* visit btn */
+    .footer__visit_shop button span{
+        font-weight: bold;
+        font-size: var(--fs-small);
+        color: var(--text);
+        margin-right: var(--fs-small);
+    }
+    .footer__visit_shop button .visit_btn{
+        font-size: calc(var(--fs-small) + 0.2rem);
+        color: var(--text);
     }
 }
