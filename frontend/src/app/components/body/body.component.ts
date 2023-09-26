@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent {
-  
-  constructor(){}
+  constructor(){
+    
+  }
   ngOnInit(): void{ 
   }
 }

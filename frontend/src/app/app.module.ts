@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ContentComponent } from './components/content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BodyComponent,
-    ProfileComponent
+    ProfileComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
