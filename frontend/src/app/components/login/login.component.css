@@ -45,6 +45,9 @@
     padding: var(--fs-small) var(--fs-regular);
     transition: transform 0.3s ease;
 }
+
+
+/* utilities */
 .submit_btn:hover{
     transform: scale(1.1);
 }
@@ -57,4 +60,16 @@
     text-align: center;
     color: var(--background);
     background-color: var(--danger);
+}
+.register_btn{
+    margin-top: var(--fs-medium);
+    text-align: center;
+    font-size: calc(var(--fs-small) + 0.1rem);
+}
+.register_btn a{
+    font-weight: bold;
+    color: var(--success);
+}
+.register_btn a:hover{
+    text-decoration: underline;
 }

@@ -6,8 +6,10 @@
 	--background: hsl(0, 0%, 100%);
 	--text: hsl(0, 0%, 0%);
 	--accent: hsl(45, 24%, 93%);
-	--shadow: hsl(0, 0%, 70%);
 
+	--shadow: hsl(0, 0%, 70%);
+	
+	--success: hsl(133, 29%, 52%);
 	--danger: hsl(0, 63%, 64%);
 
 	--fs-small: 0.7rem;
