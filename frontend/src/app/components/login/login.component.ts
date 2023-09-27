@@ -12,6 +12,11 @@ export class LoginComponent {
     username: '',
     password: ''
   }
+
+  // shows error messages
+  show: boolean = false;
+  message: string = '';
+
   constructor(private http: HttpClient, private router: Router){}
 
   onSubmit(event: Event){
@@ -30,6 +35,8 @@ export class LoginComponent {
       console.log('POST request successful:', data);
     }, (error) => { // when wrong credentials are made 
       this.router.navigate(['/login']);
+      this.show = true;
+      this.message = error.error.message;
       console.log('POST request error: ', error);
     });
 

@@ -11,7 +11,7 @@ const login = async (req, res) =>{
         const user = await User.findOne({ username: username });
         // check if user exist
         if(!user){
-            return res.status(401).json({message: "Authentication Failed"});
+            return res.status(401).json({message: "No such User!"});
         }
         // if user exist then check if user password matches
         await bcrypt.compare(password, user.password, (err, result) =>{

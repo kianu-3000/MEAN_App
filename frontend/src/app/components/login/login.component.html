@@ -2,8 +2,9 @@
 
     <div class="container_login__form">
         <span>Sign In</span>
-
+        
         <form (submit)="onSubmit($event)">
+            <i *ngIf="show" class="error_message">{{ message }}</i>
             <label for="username">Username</label>
             <input type="text" placeholder="Enter username" name="username" [(ngModel)]="formData.username" required>
             
