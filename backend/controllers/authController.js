@@ -2,6 +2,7 @@ const User = require('../models/usersModel');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { generateToken } = require('../utilities/generateToken');
+const maxTime = 3 * 24 * 60 * 60
 
 // Login authentication
 const login = async (req, res) =>{
@@ -12,13 +13,14 @@ const login = async (req, res) =>{
         if(!user){
             return res.status(401).json({message: "Authentication Failed"});
         }
-        // then check if user password matches
+        // if user exist then check if user password matches
         await bcrypt.compare(password, user.password, (err, result) =>{
             if(err)
                 return res.json({error: "Error in comparing passwords: " + err})
 
             if(result){
                 const token = generateToken(user._id);
+                res.cookie('jwt', token, {httpOnly: true, maxAge: maxTime * 1000});
                 return res.status(200).json(token);
             }
 
@@ -50,8 +52,14 @@ const register = async (req, res) => {
     }
 
 }
+// logout user
+const logout = async (req, res) => {
+    res.cookie('jwt', '', {maxAge: 1});
+	return res.status(200).json({message: "Logged out"});
+};
 
 module.exports = {
     login,
-    register
+    register,
+    logout
 };
