@@ -1,5 +1,6 @@
 const User = require('../models/usersModel');
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 // get users
 const getUsers = async (req, res) => {
@@ -29,18 +30,6 @@ const getSingleUser = async (req, res) =>{
 
     }catch(error){
         return res.status(500).json({error: error});
-    }
-};
-
-// create user
-const createUser = async (req, res) =>{
-    const {username, password, address, type, description} = req.body;
-    // Add to database
-    try{
-        const user = await User.create({username, password, address, type, description});
-        res.status(200).json(user);
-    }catch(error){
-        res.status(400).json({error: error.message});
     }
 };
 
@@ -87,6 +76,5 @@ module.exports = {
     getUsers,
     getSingleUser,
     deleteUser,
-    updateUser,
-    createUser
+    updateUser
 };

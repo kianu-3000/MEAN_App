@@ -2,19 +2,23 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const app = express();
 
-// This is a middleware
+// These are middleware
 app.use(cors());
 app.use(express.json());
 app.use((req, res, next)=>{
     console.log(req.path, req.method);
     next();
 });
+app.use(bodyParser.json());
 
 // Routes
 const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/auth');
 app.use('/api/users', userRoutes);
+app.use('/auth', authRoutes);
 
 
 // Connect to Database
