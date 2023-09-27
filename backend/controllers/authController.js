@@ -1,6 +1,7 @@
 const User = require('../models/usersModel');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const { generateToken } = require('../utilities/generateToken');
 
 // Login authentication
 const login = async (req, res) =>{
@@ -17,7 +18,8 @@ const login = async (req, res) =>{
                 return res.json({error: "Error in comparing passwords: " + err})
 
             if(result){
-                return res.status(200).json({message: "Login Successfully as " + user.username});
+                const token = generateToken(user._id);
+                return res.status(200).json(token);
             }
 
             else
@@ -29,6 +31,7 @@ const login = async (req, res) =>{
     }
 }
 
+// Register a new user
 const register = async (req, res) => {
 
     const {username, password, address, type, description} = req.body;
