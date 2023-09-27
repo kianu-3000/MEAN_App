@@ -9,6 +9,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ContentComponent } from './components/content/content.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     BodyComponent,
     ProfileComponent,
-    ContentComponent
+    ContentComponent,
+    LoginComponent
 
   ],
   imports: [
