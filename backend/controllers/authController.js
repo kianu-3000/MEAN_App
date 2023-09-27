@@ -21,11 +21,11 @@ const login = async (req, res) =>{
             if(result){
                 const token = generateToken(user._id);
                 res.cookie('jwt', token, {httpOnly: true, maxAge: maxTime * 1000});
-                return res.status(200).json({message: `Logged in as ${user.username}`});
+                return res.status(200).json({message: `Logged in as ${user.username} with token : ${token}`});
             }
 
             else
-                return res.status(404).json({message: `Password incorrect for user ${user.username}!`});
+                return res.status(404).json({message: `Incorrect password for user ${user.username}!`});
         })
 
     }catch(error){
