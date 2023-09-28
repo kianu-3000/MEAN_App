@@ -10,8 +10,7 @@ import { DataService } from '../../service/data.service';
 export class ContentComponent implements OnInit{
 
   data : any = null;
-  myClass = "yeah boi";
-  entry: DataEntry[] = [];
+  singleData: any;
 
   constructor(private dataService: DataService){}
 
@@ -22,15 +21,17 @@ export class ContentComponent implements OnInit{
     }, (error) =>{
       console.log("Error fetching data", error);
     });
-   
+    
 
   }
 
-  showData($event: any){
-      console.log("button is clicked!");
-      if($event) {
-      console.log($event.target);
-      console.log($event.target.value);
-      }
+  // this will fetch some single data to the express api
+  showData($event: any, username){
+    this.dataService.fetchSingleData(username).subscribe((data) => {
+      this.singleData = data;
+      console.log(this.singleData);
+    }, (error) =>{
+      console.log("Error fetching data", error);
+    });
     } 
 }

@@ -11,4 +11,7 @@ export class DataService {
   fetchData() {
     return this.http.get('http://localhost:3000/api/users');
   }
+  fetchSingleData(username: string) {
+    return this.http.get('http://localhost:3000/api/users/' + username);
+  }
 }

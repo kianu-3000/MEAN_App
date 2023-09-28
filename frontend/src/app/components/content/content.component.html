@@ -25,8 +25,8 @@
         <div class="footer__rating"></div>
 
         <div class="footer__visit_shop">
-            <button class="cursor_pointer" on-click = "showData($event)">
-                <span>Visit Shop</span>
+            <button class="cursor_pointer" on-click = "showData($event, entry.username)">
+                <span class="visit">Visit Shop {{ entry.username }}</span>
                 <i class="bi bi-arrow-right visit_btn"></i>
             </button>
         </div>

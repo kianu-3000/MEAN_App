@@ -7,7 +7,7 @@ const { getUsers, getSingleUser, deleteUser, updateUser } = require('../controll
 router.get('/', getUsers);
 
 // get single user
-router.get('/:id', getSingleUser);
+router.get('/:username', getSingleUser);
 
 // delete a user
 router.delete('/:id', deleteUser);

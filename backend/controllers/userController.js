@@ -15,13 +15,13 @@ const getUsers = async (req, res) => {
 // get single user
 const getSingleUser = async (req, res) =>{
     try{
-        const {id} = req.params;
+        const { username } = req.params;
         // this checks if user id is valid and will avoid any internal errors
-        if(!mongoose.Types.ObjectId.isValid(id)){
-            return res.status(404).json({error: "No such User"})
-        }
+        // if(!mongoose.Types.ObjectId.isValid(id)){
+        //     return res.status(404).json({error: "No such User"})
+        // }
 
-        const user = await User.findById(id);
+        const user = await User.findOne({username: username});
 
         if(!user){
             return res.status(404).json({error: "No such user!"});

@@ -31,13 +31,13 @@ export class LoginComponent {
       headers: headers
     })
     .subscribe(data => { // this is when everything goes right in the server post request
-      this.router.navigate(['/home']);
-      console.log('POST request successful:', data);
+        this.router.navigate(['/home']);
+        console.log('POST request successful:', data);
     }, (error) => { // when wrong credentials are made 
-      this.router.navigate(['/login']);
-      this.show = true;
-      this.message = error.error.message;
-      console.log('POST request error: ', error);
+        this.router.navigate(['/login']);
+        this.show = true;
+        this.message = error.error.message;
+        console.log('POST request error: ', error);
     });
 
   }
