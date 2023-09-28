@@ -21,7 +21,7 @@ const login = async (req, res) =>{
             if(result){
                 const token = generateToken(user._id);
                 res.cookie('jwt', token, {httpOnly: true, maxAge: maxTime * 1000});
-                return res.status(200).json({message: `Logged in as ${user.username} with token : ${token}`});
+                return res.status(200).json(token);
             }
 
             else

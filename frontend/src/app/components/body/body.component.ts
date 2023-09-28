@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class BodyComponent {
   constructor(){
-    
   }
   ngOnInit(): void{ 
+    const jwtToken = localStorage.getItem('access_token');
+    console.log('Token: ' + jwtToken);
   }
+  
 }
