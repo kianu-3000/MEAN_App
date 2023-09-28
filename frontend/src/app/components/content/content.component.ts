@@ -29,7 +29,7 @@ export class ContentComponent implements OnInit{
   sendData($event: any, username){
       this.dataService.fetchSingleData(username).subscribe((data) => {
         this.singleData = data;
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/shop']);
         localStorage.setItem('user', this.singleData.username);
         console.log(`User: ${this.singleData.username}, Email: ${this.singleData.email}`);
       }, (error) =>{
