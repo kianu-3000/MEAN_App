@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const { generateToken } = require('../utilities/generateToken');
 const maxTime = 3 * 24 * 60 * 60
 
-// Login authentication
+// Login user authentication
 const login = async (req, res) =>{
     const {username, password} = req.body;
     try{
@@ -35,8 +35,23 @@ const login = async (req, res) =>{
 
 // Register a new user
 const register = async (req, res) => {
+    // get the post request params
+    const {
+        username, 
+        email,
+        password,
+        firstName,
+        lastName, 
+        middleName,
+        birthDate,
+        age,
+        businessName,
+        businessType,
+        address, 
+        description, 
+        rating
+    } = req.body;
 
-    const {username, password, address, type, description} = req.body;
     // Add to database
     try{
         // password encryption
@@ -44,7 +59,22 @@ const register = async (req, res) => {
         const hashPassword = await bcrypt.hash(password, salt);
         const pass = hashPassword;
 
-        const user = await User.create({username, password: pass, address, type, description});
+        const user = await User.create({
+                username,
+                email,
+                password: pass, 
+                firstName,
+                lastName, 
+                middleName,
+                birthDate,
+                age,
+                businessName,
+                businessType,
+                address, 
+                description,
+                rating
+            });
+
         res.status(200).json(user);
 
     }catch(error){

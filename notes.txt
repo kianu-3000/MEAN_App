@@ -24,27 +24,26 @@ User Models:
 
     Business Owner Model:
         - id 
-        - first_name
-        - last_name
-        - middle_name
-        - birth_date
+        - username
+        - password
+        - firstName
+        - lastName
+        - middleName
+        - birthDate
         - age
-        - business_name
-        - business_type
-        - payment_method
-        - user_type
+        - businessName
+        - businessType
+        - address
+        - description
         - rating
 
     Product Model: (this will only be linked to a Business Owner user)
         - id
-        - owner_id
-        - name
-        - product_type
+        - ownerId
+        - productName
+        - productDetails
         - stock
         - price
-        - detail
-        - rating
-        - user_type
     
     Follower model: (only customer user will be able to follow a business owner)
         - id_owner
