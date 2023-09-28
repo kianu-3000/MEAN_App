@@ -40,11 +40,11 @@ const userSchema = new Schema({ // this defines the structure
     },
     businessName:{
         type: String,
-        required: true
+        required: false
     },
     businessType:{
         type: String,
-        required: true
+        required: false
     },
     address:{
         type: String,
@@ -52,7 +52,7 @@ const userSchema = new Schema({ // this defines the structure
     },
     description:{
         type: String,
-        required: true
+        required: false
     },
     followers: {
         type: [String],
