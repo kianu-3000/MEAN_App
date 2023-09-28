@@ -16,6 +16,7 @@ export class HeaderComponent {
 
   // No idea what this is doing
   ngOnInit(): void{ 
+    localStorage.clear();
   }
 
   // logs the value of the search input
@@ -25,19 +26,22 @@ export class HeaderComponent {
   // prevents form from reloading upon submitting
   onFormSubmit(event: Event){
     event.preventDefault();
-    this.getValue();
+    this.getValue(); 
   }
   
   // logs out a user 
   logout(){
     // where the post request to the api is made
+
     this.http.get('http://localhost:3000/auth/logout')
     .subscribe(data => { // this is when everything goes right in the server post request
       this.router.navigate(['/login']);
       console.log('Logged out:', data);
+
     }, (error) => { // when wrong credentials are made 
       this.router.navigate(['/home']);
       console.log('Logged out failed: ', error);
+
     });
     console.log('logout!');
   }

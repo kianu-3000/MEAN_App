@@ -7,7 +7,7 @@
         <section class="content__profile">
             <a routerLink="/profile" class="profile__name">{{ entry.businessName }}</a>
             <i class="profile__address">{{ entry.address }}</i>
-            <i class="profile__type">@{{ entry.businessType }}</i>
+            <i class="profile__type">@{{ entry.username }}</i>
         </section>
 
         <div class="content__close">
@@ -25,8 +25,8 @@
         <div class="footer__rating"></div>
 
         <div class="footer__visit_shop">
-            <button class="cursor_pointer" on-click = "showData($event, entry.username)">
-                <span class="visit">Visit Shop {{ entry.username }}</span>
+            <button class="cursor_pointer" on-click = "sendData($event, entry.username)">
+                <span class="visit">Visit Shop</span>
                 <i class="bi bi-arrow-right visit_btn"></i>
             </button>
         </div>
