@@ -54,6 +54,10 @@ const userSchema = new Schema({ // this defines the structure
         type: String,
         required: true
     },
+    followers: {
+        type: [String],
+        required: false
+    },
     rating: {
         type: Number,
         required: false
