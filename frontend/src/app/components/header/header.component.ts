@@ -29,7 +29,7 @@ export class HeaderComponent {
     this.getValue(); 
   }
   
-  // logs out a user 
+  // logs out a user using api
   logout(){
     // where the post request to the api is made
 
@@ -39,7 +39,6 @@ export class HeaderComponent {
       console.log('Logged out:', data);
 
     }, (error) => { // when wrong credentials are made 
-      this.router.navigate(['/home']);
       console.log('Logged out failed: ', error);
 
     });

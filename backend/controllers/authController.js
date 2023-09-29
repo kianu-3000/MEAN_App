@@ -2,6 +2,7 @@ const User = require('../models/usersModel');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { generateToken } = require('../utilities/generateToken');
+const cookie = require('cookies');
 const maxTime = 3 * 24 * 60 * 60
 
 // Login user authentication

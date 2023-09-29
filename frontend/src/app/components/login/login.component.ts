@@ -34,7 +34,7 @@ export class LoginComponent {
       headers: headers
     })
     .subscribe(data => { // this is when everything goes right in the server post request
-        localStorage.setItem('access_token', data.toString());
+        // localStorage.setItem('access_token', data.toString());
         this.router.navigate(['/home']);
         console.log('Token: ' + data);
     }, (error) => { // when wrong credentials are made 
