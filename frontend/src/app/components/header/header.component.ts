@@ -16,7 +16,7 @@ export class HeaderComponent {
 
   // No idea what this is doing
   ngOnInit(): void{ 
-    localStorage.clear();
+    // localStorage.clear();
   }
 
   // logs the value of the search input

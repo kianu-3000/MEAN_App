@@ -18,6 +18,9 @@ export class LoginComponent {
   message: string = '';
 
   constructor(private http: HttpClient, private router: Router){}
+  ngOnInit(){
+    localStorage.clear();
+  }
 
   onSubmit(event: Event){
     event.preventDefault(); // prevents default behavior on a form
@@ -31,8 +34,9 @@ export class LoginComponent {
       headers: headers
     })
     .subscribe(data => { // this is when everything goes right in the server post request
+        localStorage.setItem('access_token', data.toString());
         this.router.navigate(['/home']);
-        console.log('POST request successful:', data);
+        console.log('Token: ' + data);
     }, (error) => { // when wrong credentials are made 
         this.router.navigate(['/login']);
         this.show = true;

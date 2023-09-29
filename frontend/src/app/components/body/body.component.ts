@@ -10,7 +10,7 @@ export class BodyComponent {
   }
   ngOnInit(): void{ 
     const jwtToken = localStorage.getItem('access_token');
-    console.log('Token: ' + jwtToken);
+    console.log('Access_Token: ' + jwtToken);
   }
   
 }
