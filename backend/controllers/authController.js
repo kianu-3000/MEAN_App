@@ -26,7 +26,7 @@ const login = async (req, res) =>{
             }
 
             else
-                return res.status(404).json({message: `Incorrect password for user ${user.username}!`});
+                return res.status(404).json({message: `Incorrect password!`});
         })
 
     }catch(error){
