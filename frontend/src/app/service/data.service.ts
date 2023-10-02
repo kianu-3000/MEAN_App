@@ -7,11 +7,12 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+  // For getting user data
   fetchData() {
     return this.http.get('http://localhost:3000/api/users');
   }
   fetchSingleData(username: string) {
-    return this.http.get('http://localhost:3000/api/users/' + username);
+    return this.http.get(`http://localhost:3000/api/users/${username}`);
   }
 
   sendData(data: any){
@@ -22,6 +23,11 @@ export class DataService {
     this.http.post('http://localhost:3000/auth/login', JSON.stringify(data), {
       headers: headers
     });
+  }
+
+  // for getting product data
+  fetchProductData(username: string){
+    return this.http.get(`http://localhost:3000/api/products/${username}`);
   }
 
 }

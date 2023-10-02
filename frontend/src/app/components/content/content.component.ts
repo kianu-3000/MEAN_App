@@ -25,8 +25,8 @@ export class ContentComponent implements OnInit{
     });
   }
 
-  // this will fetch some single data to the express api
-  sendData($event: any, username){
+  // this will get a user in the api
+  sendData(username){
       this.dataService.fetchSingleData(username).subscribe((data) => {
         this.singleData = data;
         this.router.navigate(['/shop']);

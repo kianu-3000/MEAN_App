@@ -1,4 +1,14 @@
 <app-header></app-header>
 <div class="body" style="padding-top: 4rem;">
-    <div>Profile {{ user }}</div>
+    <div>
+        <span>Product {{ user }}</span>
+        <ul *ngFor="let data of userProductData">
+            <li>{{ data.ownerUsername }}</li>
+            <li>{{ data.productName }}</li>
+            <li>{{ data.productDetails }}</li>
+            <li>{{ data.stock }}</li>
+            <li>{{ data.price }}</li>
+        </ul>
+
+    </div>
 </div>
