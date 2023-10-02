@@ -11,7 +11,7 @@ const productSchema = new Schema({ // this defines the structure
     productName: {
         type: String,
         required: true,
-        unique: true
+        unique: false
     },
     productDetails: {
         type: String,
