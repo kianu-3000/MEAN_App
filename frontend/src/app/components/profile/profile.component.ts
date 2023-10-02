@@ -11,6 +11,7 @@ export class ProfileComponent implements OnInit{
   
   user = localStorage.getItem('user');
   userProductData: any;
+  productDisplay: boolean = false;
 
   constructor(private dataService: DataService, private router: Router){}
 
@@ -23,9 +24,11 @@ export class ProfileComponent implements OnInit{
       this.userProductData = data;
       if(this.userProductData == ''){
         console.log("No Products to display");
+        this.productDisplay = true;
       }
       else{
         console.log("Products: " + this.userProductData);
+        this.productDisplay = false;
       }
       
     }, (error) =>{
