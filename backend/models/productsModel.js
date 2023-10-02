@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema({ // this defines the structure
 
-    ownerId:{
+    ownerUsername:{
         type: String,
         required: true
     },
