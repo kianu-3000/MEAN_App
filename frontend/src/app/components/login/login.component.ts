@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent {
   show: boolean = false;
   message: string = '';
 
-  constructor(private http: HttpClient, private router: Router){}
+  constructor(private http: HttpClient, private router: Router, private cookieService: CookieService){}
   ngOnInit(){
     localStorage.clear();
   }
@@ -34,9 +35,10 @@ export class LoginComponent {
       headers: headers
     })
     .subscribe(data => { // this is when everything goes right in the server post request
-        // localStorage.setItem('access_token', data.toString());
+        this.cookieService.set('token', JSON.stringify(data), 1);
         this.router.navigate(['/home']);
-        console.log('Token: ' + data);
+        console.log('Cookie: ', this.cookieService.get('jwt'));
+
     }, (error) => { // when wrong credentials are made 
         this.router.navigate(['/login']);
         this.show = true;
