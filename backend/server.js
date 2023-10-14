@@ -17,8 +17,10 @@ app.use(bodyParser.json());
 // Routes
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
+const productRoutes = require('./routes/products');
 app.use('/api/users', userRoutes);
 app.use('/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
 
 // Connect to Database

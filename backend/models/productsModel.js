@@ -4,14 +4,14 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema({ // this defines the structure
 
-    ownerId:{
+    ownerUsername:{
         type: String,
         required: true
     },
     productName: {
         type: String,
         required: true,
-        unique: true
+        unique: false
     },
     productDetails: {
         type: String,
